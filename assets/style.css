@@ -187,9 +187,10 @@ p { margin: 0.8em 0; }
 .contact-list {
   list-style: none;
   padding: 0;
-}
-.contact-list li {
-  padding: 4px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
+  align-items: center;
   font-size: 1.05em;
 }
 
