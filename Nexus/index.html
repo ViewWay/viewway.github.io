@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexus — Production-Grade Rust Web Framework</title>
+<link rel="stylesheet" href="/assets/style.css">
+<script src="/assets/i18n.js"></script>
+<style>
+  .code-block {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 20px;
+    overflow-x: auto;
+    font-family: "SF Mono", "Fira Code", "Cascadia Code", Consolas, monospace;
+    font-size: 0.9em;
+    line-height: 1.6;
+    margin: 1em 0;
+    white-space: pre;
+  }
+  .kw { color: #ff7b72; }
+  .fn { color: #d2a8ff; }
+  .str { color: #a5d6ff; }
+  .cm { color: #8b949e; font-style: italic; }
+  .mac { color: #79c0ff; }
+  .ty { color: #ffa657; }
+  [data-theme="dark"] .kw { color: #ff7b72; }
+  [data-theme="dark"] .fn { color: #d2a8ff; }
+  [data-theme="dark"] .str { color: #a5d6ff; }
+  [data-theme="dark"] .cm { color: #8b949e; }
+  [data-theme="dark"] .mac { color: #79c0ff; }
+  [data-theme="dark"] .ty { color: #ffa657; }
+  [data-theme="light"] .kw { color: #d73a49; }
+  [data-theme="light"] .fn { color: #6f42c1; }
+  [data-theme="light"] .str { color: #032f62; }
+  [data-theme="light"] .cm { color: #6a737d; }
+  [data-theme="light"] .mac { color: #005cc5; }
+  [data-theme="light"] .ty { color: #e36209; }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+    margin: 1em 0;
+  }
+  .stat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+  }
+  .stat-card .stat-num {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--accent);
+    display: block;
+  }
+  .stat-card .stat-label {
+    font-size: 0.9em;
+    color: var(--text-secondary);
+    margin-top: 4px;
+    display: block;
+  }
+
+  .arch-diagram {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px;
+    text-align: center;
+    font-family: "SF Mono", "Fira Code", Consolas, monospace;
+    font-size: 0.88em;
+    line-height: 1.5;
+    overflow-x: auto;
+    margin: 1em 0;
+    white-space: pre;
+    color: var(--text);
+  }
+
+  .crate-group {
+    margin: 1.2em 0;
+  }
+  .crate-group h3 {
+    border: none;
+    padding: 0;
+    margin: 0 0 8px 0;
+    font-size: 1.1em;
+  }
+  .crate-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .crate-tag {
+    background: var(--accent-light);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-family: "SF Mono", "Fira Code", Consolas, monospace;
+    font-size: 0.85em;
+    color: var(--accent);
+    display: inline-block;
+  }
+
+  .phase-timeline {
+    list-style: none;
+    padding-left: 0;
+  }
+  .phase-timeline li {
+    padding: 8px 0;
+    border-left: 3px solid var(--accent);
+    padding-left: 16px;
+    margin-bottom: 4px;
+  }
+
+  .back-link {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: var(--text-secondary);
+    font-size: 0.95em;
+  }
+  .back-link:hover {
+    color: var(--accent);
+  }
+</style>
+</head>
+<body>
+<nav class="site-nav">
+  <a href="/" class="nav-brand">HongLin He</a>
+  <div class="nav-links">
+    <a href="/projects.html">Projects</a>
+    <a href="https://github.com/nexus-rs/nexus">GitHub</a>
+  </div>
+  <div class="nav-controls">
+    <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">&#127769;</button>
+  </div>
+</nav>
+
+<main class="container">
+  <a href="/projects.html" class="back-link">&larr; Back to Projects</a>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Nexus</h1>
+    <p class="tagline">A production-grade Rust web framework with a custom io-uring async runtime. Thread-per-core architecture. 58 crates. 220K+ lines of Rust.</p>
+  </section>
+
+  <div class="stats-grid">
+    <div class="stat-card">
+      <span class="stat-num">58</span>
+      <span class="stat-label">Crates</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-num">220K+</span>
+      <span class="stat-label">Lines of Rust</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-num">8</span>
+      <span class="stat-label">Completed Phases</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-num">io_uring</span>
+      <span class="stat-label">Async Backend</span>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Architecture -->
+  <h2>Architecture Overview</h2>
+  <p>Nexus uses a <strong>thread-per-core</strong> model backed by Linux <code>io_uring</code> for zero-overhead async I/O. Each worker thread owns a dedicated event loop &mdash; no cross-thread lock contention, no work-stealing overhead.</p>
+
+  <div class="arch-diagram">               Request Flow (Linux io_uring)
+  ┌──────────────────────────────────────────────────────────┐
+  │                      TCP Listener                        │
+  │              (SO_REUSEPORT, per-thread)                  │
+  └──────────────┬───────────────────────────────┬───────────┘
+                 │                               │
+       ┌─────────▼─────────┐           ┌─────────▼─────────┐
+       │   Worker Thread 0  │           │   Worker Thread N  │
+       │  ┌───────────────┐ │           │  ┌───────────────┐ │
+       │  │  io_uring SQ  │ │    ...    │  │  io_uring SQ  │ │
+       │  │  io_uring CQ  │ │           │  │  io_uring CQ  │ │
+       │  └───────┬───────┘ │           │  └───────┬───────┘ │
+       │          │         │           │          │         │
+       │  ┌───────▼───────┐ │           │  ┌───────▼───────┐ │
+       │  │ HTTP Parser   │ │           │  │ HTTP Parser   │ │
+       │  │ Router        │ │           │  │ Router        │ │
+       │  │ Middleware    │ │           │  │ Middleware    │ │
+       │  │ Handler       │ │           │  │ Handler       │ │
+       │  └───────────────┘ │           │  └───────────────┘ │
+       └────────────────────┘           └────────────────────┘</div>
+
+  <p><strong>Key design decisions:</strong></p>
+  <ul>
+    <li><strong>Thread-per-core</strong> &mdash; each CPU core runs one worker; zero lock contention on the hot path</li>
+    <li><strong>io_uring submission queues</strong> &mdash; batched async syscalls without kernel transitions</li>
+    <li><strong>SO_REUSEPORT</strong> &mdash; kernel-level load balancing across worker threads</li>
+    <li><strong>Ownership model</strong> &mdash; each thread owns its connections end-to-end (accept, read, parse, route, respond)</li>
+    <li><strong>Cross-platform fallback</strong> &mdash; epoll (Linux), kqueue (macOS/BSD) backends for non-io_uring environments</li>
+  </ul>
+
+  <hr>
+
+  <!-- Development Phases -->
+  <h2>Development Phases</h2>
+  <ul class="phase-timeline">
+    <li><strong>Phase 1 &mdash; Runtime</strong> &mdash; Custom async runtime with io_uring, epoll, kqueue backends; thread-per-core scheduler</li>
+    <li><strong>Phase 2 &mdash; HTTP</strong> &mdash; HTTP/1.1 parser, request/response types, routing, static file serving</li>
+    <li><strong>Phase 3 &mdash; Middleware</strong> &mdash; Layered middleware pipeline: logging, CORS, compression, authentication, rate limiting</li>
+    <li><strong>Phase 4 &mdash; Resilience</strong> &mdash; Circuit breaker, retry with backoff, timeout, bulkhead isolation</li>
+    <li><strong>Phase 5 &mdash; Observability</strong> &mdash; Structured logging, distributed tracing (OpenTelemetry), metrics (Prometheus)</li>
+    <li><strong>Phase 6 &mdash; Web3</strong> &mdash; Ethereum RPC client, smart contract ABI bindings, wallet/key management</li>
+    <li><strong>Phase 7 &mdash; Production</strong> &mdash; Graceful shutdown, health checks, config management, TLS, i18n, CLI tools</li>
+    <li><strong>Phase 8 &mdash; Data Layer</strong> &mdash; ORM with migrations, connection pooling, Redis cache, PostgreSQL driver</li>
+  </ul>
+
+  <hr>
+
+  <!-- Crate List -->
+  <h2>Crate Ecosystem (58 Crates)</h2>
+
+  <div class="crate-group">
+    <h3>Runtime &amp; Async</h3>
+    <div class="crate-list">
+      <span class="crate-tag">nexus-runtime</span>
+      <span class="crate-tag">nexus-io</span>
+      <span class="crate-tag">nexus-uring</span>
+      <span class="crate-tag">nexus-epoll</span>
+      <span class="crate-tag">nexus-kqueue</span>
+      <span class="crate-tag">nadox</span>
+    </div>
+  </div>
+
+  <div class="crate-group">
+    <h3>HTTP</h3>
+    <div class="crate-list">
+      <span class="crate-tag">nexus-http</span>
+      <span class="crate-tag">nexus-http-parser</span>
+      <span class="crate-tag">nexus-router</span>
+      <span class="crate-tag">nexus-server</span>
+      <span class="crate-tag">nexus-tls</span>
+      <span class="crate-tag">nexus-ws</span>
+      <span class="crate-tag">nexus-static</span>
+    </div>
+  </div>
+
+  <div class="crate-group">
+    <h3>Middleware</h3>
+    <div class="crate-list">
+      <span class="crate-tag">nexus-middleware</span>
+      <span class="crate-tag">nexus-cors</span>
+      <span class="crate-tag">nexus-compress</span>
+      <span class="crate-tag">nexus-auth</span>
+      <span class="crate-tag">nexus-limit</span>
+      <span class="crate-tag">nexus-logger</span>
+      <span class="crate-tag">nexus-trace</span>
+    </div>
+  </div>
+
+  <div class="crate-group">
+    <h3>Resilience</h3>
+    <div class="crate-list">
+      <span class="crate-tag">nexus-circuit-breaker</span>
+      <span class="crate-tag">nexus-retry</span>
+      <span class="crate-tag">nexus-timeout</span>
+      <span class="crate-tag">nexus-bulkhead</span>
+      <span class="crate-tag">nexus-fallback</span>
+    </div>
+  </div>
+
+  <div class="crate-group">
+    <h3>Data Layer</h3>
+    <div class="crate-list">
+      <span class="crate-tag">nexus-db</span>
+      <span class="crate-tag">nexus-orm</span>
+      <span class="crate-tag">nexus-migrate</span>
+      <span class="crate-tag">nexus-pool</span>
+      <span class="crate-tag">nexus-redis</span>
+      <span class="crate-tag">nexus-pg</span>
+    </div>
+  </div>
+
+  <div class="crate-group">
+    <h3>Observability</h3>
+    <div class="crate-list">
+      <span class="crate-tag">nexus-telemetry</span>
+      <span class="crate-tag">nexus-metrics</span>
+      <span class="crate-tag">nexus-otel</span>
+      <span class="crate-tag">nexus-prometheus</span>
+      <span class="crate-tag">nexus-health</span>
+    </div>
+  </div>
+
+  <div class="crate-group">
+    <h3>Web3</h3>
+    <div class="crate-list">
+      <span class="crate-tag">nexus-eth</span>
+      <span class="crate-tag">nexus-web3</span>
+      <span class="crate-tag">nexus-abi</span>
+      <span class="crate-tag">nexus-wallet</span>
+      <span class="crate-tag">nexus-rpc</span>
+    </div>
+  </div>
+
+  <div class="crate-group">
+    <h3>Core &amp; Utilities</h3>
+    <div class="crate-list">
+      <span class="crate-tag">nexus-core</span>
+      <span class="crate-tag">nexus-config</span>
+      <span class="crate-tag">nexus-cli</span>
+      <span class="crate-tag">nexus-i18n</span>
+      <span class="crate-tag">nexus-error</span>
+      <span class="crate-tag">nexus-bytes</span>
+      <span class="crate-tag">nexus-buf</span>
+      <span class="crate-tag">nexus-test</span>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Quick Start -->
+  <h2>Quick Start</h2>
+  <p>Add Nexus to your <code>Cargo.toml</code>:</p>
+  <div class="code-block"><span class="kw">[dependencies]</span>
+nexus = { version = <span class="str">"0.1"</span>, features = [<span class="str">"full"</span>] }</div>
+
+  <p>Write your first server:</p>
+  <div class="code-block"><span class="kw">use</span> nexus::prelude::*;
+
+<span class="kw">fn</span> <span class="fn">main</span>() -&gt; <span class="ty">Result</span>&lt;()&gt; {
+    <span class="kw">let</span> app = <span class="fn">App::new</span>()
+        .<span class="fn">route</span>(<span class="str">"/"</span>, <span class="fn">get</span>(<span class="str">"Hello from Nexus!"</span>))
+        .<span class="fn">route</span>(<span class="str">"/api/health"</span>, <span class="fn">get</span>(health_handler))
+        .<span class="fn">middleware</span>(<span class="fn">cors::default</span>())
+        .<span class="fn">middleware</span>(<span class="fn">logger::new</span>());
+
+    Server::builder()
+        .<span class="fn">bind</span>(<span class="str">"0.0.0.0:8080"</span>)?
+        .<span class="fn">workers</span>(<span class="ty">num_cpus</span>::<span class="fn">get</span>())
+        .<span class="fn">run</span>(app)
+}
+
+<span class="kw">async fn</span> <span class="fn">health_handler</span>() -&gt; <span class="ty">Json</span>&lt;<span class="ty">HealthResponse</span>&gt; {
+    <span class="ty">Json</span>(<span class="ty">HealthResponse</span> { status: <span class="str">"ok"</span>.into() })
+}
+
+<span class="cm">// With circuit breaker + retry for downstream calls:</span>
+<span class="kw">use</span> nexus::resilience::{<span class="ty">CircuitBreaker</span>, <span class="ty">Retry</span>};
+
+<span class="kw">async fn</span> <span class="fn">call_service</span>() -&gt; <span class="ty">Result</span>&lt;<span class="ty">Response</span>&gt; {
+    <span class="kw">let</span> cb = <span class="ty">CircuitBreaker</span>::<span class="fn">builder</span>()
+        .<span class="fn">failure_threshold</span>(<span class="ty">5</span>)
+        .<span class="fn">reset_timeout</span>(<span class="ty">Duration</span>::<span class="fn">from_secs</span>(<span class="ty">30</span>))
+        .<span class="fn">build</span>();
+
+    <span class="kw">let</span> retry = <span class="ty">Retry</span>::<span class="fn">exponential_backoff</span>(<span class="ty">3</span>);
+
+    <span class="kw">let</span> client = <span class="ty">HttpClient</span>::<span class="fn">new</span>()
+        .<span class="fn">with</span>(cb)
+        .<span class="fn">with</span>(retry);
+
+    client.<span class="fn">get</span>(<span class="str">"https://api.example.com/data"</span>).<span class="kw">await</span>
+}</div>
+
+  <hr>
+
+  <!-- Feature Highlights -->
+  <h2>Feature Highlights</h2>
+
+  <div class="interest-grid">
+    <div class="interest-card">
+      <h3>High Availability Patterns</h3>
+      <p>Circuit breaker with configurable thresholds, exponential backoff retry, bulkhead isolation, graceful degradation with fallbacks. Production-tested resilience stack.</p>
+    </div>
+    <div class="interest-card">
+      <h3>Full Observability Stack</h3>
+      <p>Structured JSON logging, distributed tracing via OpenTelemetry (W3C TraceContext), Prometheus metrics exposition, and /health readiness endpoints out of the box.</p>
+    </div>
+    <div class="interest-card">
+      <h3>Web3 Integration</h3>
+      <p>Native Ethereum JSON-RPC client, ABI encoding/decoding, smart contract bindings generation, wallet and key management, multi-chain support.</p>
+    </div>
+    <div class="interest-card">
+      <h3>Data Layer</h3>
+      <p>Type-safe ORM with compile-time query validation, migration runner, async connection pooling, Redis caching layer, and first-class PostgreSQL support.</p>
+    </div>
+    <div class="interest-card">
+      <h3>Zero-Cost Abstractions</h3>
+      <p>Monomorphized middleware pipeline, stack-allocated request routing, inline HTTP parsing. The runtime overhead is the kernel io_uring interface and nothing else.</p>
+    </div>
+    <div class="interest-card">
+      <h3>Production Ready</h3>
+      <p>Graceful shutdown with drain, hot config reload, TLS via rustls, internationalization (i18n), CLI scaffolding tool, and Docker-ready builds.</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Links -->
+  <h2>Links</h2>
+  <ul class="contact-list">
+    <li>Source: <a href="https://github.com/nexus-rs/nexus">github.com/nexus-rs/nexus</a></li>
+    <li>Parent: <a href="/projects.html">All Projects</a></li>
+    <li>Author: <a href="/">HongLin He</a></li>
+  </ul>
+</main>
+
+<footer class="site-footer">
+  <p>&copy; 2026 HongLin He &mdash; Nexus Documentation</p>
+</footer>
+</body>
+</html>

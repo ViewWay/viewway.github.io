@@ -233,6 +233,66 @@ const translations = {
     "de": "15 Crates, Full-Stack (Rust-Backend + React-Frontend), LLM-Integration",
     "es": "15 crates, full-stack (backend Rust + frontend React), integración LLM"
   },
+  "proj_nexus_what": {
+    "en": "A high-availability web framework with custom io-uring async runtime, 58 crates covering HTTP, data layer, observability, and Web3.",
+    "zh-CN": "一个高可用Web框架，自研io-uring异步运行时，58个crate覆盖HTTP、数据层、可观测性和Web3。",
+    "zh-TW": "一個高可用Web框架，自研io-uring異步運行時，58個crate覆蓋HTTP、資料層、可觀測性和Web3。",
+    "ja": "カスタムio-uring非同期ランタイムを搭載した高可用性Webフレームワーク。HTTP、データ層、オブザーバビリティ、Web3をカバーする58クレート。",
+    "ko": "커스텀 io-uring 비동기 런타임을 갖춘 고가용성 웹 프레임워크. HTTP, 데이터 레이어, 관측 가능성, Web3를 포함하는 58개 크레이트.",
+    "fr": "Un framework web haute disponibilité avec runtime async io-uring personnalisé, 58 crates couvrant HTTP, data, observabilité et Web3.",
+    "de": "Ein hochverfügbares Web-Framework mit benutzerdefiniertem io-uring Async-Runtime, 58 Crates für HTTP, Daten, Observability und Web3.",
+    "es": "Un framework web de alta disponibilidad con runtime async io-uring personalizado, 58 crates cubriendo HTTP, datos, observabilidad y Web3."
+  },
+  "proj_nexus_features": {
+    "en": "Custom async runtime, circuit breaker, distributed tracing, ORM, i18n, 220K+ lines",
+    "zh-CN": "自定义异步运行时, 熔断器, 分布式追踪, ORM, 国际化, 220K+行",
+    "zh-TW": "自定義異步運行時, 熔斷器, 分散式追蹤, ORM, 國際化, 220K+行",
+    "ja": "カスタム非同期ランタイム, サーキットブレーカー, 分散トレーシング, ORM, i18n, 220K+行",
+    "ko": "커스텀 비동기 런타임, 서킷 브레이커, 분산 추적, ORM, i18n, 220K+줄",
+    "fr": "Runtime async personnalisé, circuit breaker, tracing distribué, ORM, i18n, 220K+ lignes",
+    "de": "Benutzerdefiniertes Async-Runtime, Circuit Breaker, Distributed Tracing, ORM, i18n, 220K+ Zeilen",
+    "es": "Runtime async personalizado, circuit breaker, tracing distribuido, ORM, i18n, 220K+ líneas"
+  },
+  "proj_zpython_what": {
+    "en": "A complete Python 3.15 interpreter implemented from scratch in Zig, with custom GC, PEG parser, and bytecode VM.",
+    "zh-CN": "用Zig从零实现的完整Python 3.15解释器，含自定义GC、PEG解析器和字节码虚拟机。",
+    "zh-TW": "用Zig從零實現的完整Python 3.15解釋器，含自定義GC、PEG解析器和字節碼虛擬機。",
+    "ja": "Zigでゼロから実装した完全なPython 3.15インタプリタ。カスタムGC、PEGパーサー、バイトコードVMを搭載。",
+    "ko": "Zig로 처음부터 구현한 완전한 Python 3.15 인터프리터. 커스텀 GC, PEG 파서, 바이트코드 VM 포함.",
+    "fr": "Un interpréteur Python 3.15 complet implémenté de zéro en Zig, avec GC personnalisé, parser PEG et VM à bytecode.",
+    "de": "Ein kompletter Python 3.15 Interpreter von Grund auf in Zig implementiert, mit benutzerdefiniertem GC, PEG-Parser und Bytecode-VM.",
+    "es": "Un intérprete Python 3.15 completo implementado desde cero en Zig, con GC personalizado, parser PEG y VM de bytecode."
+  },
+  "proj_zpython_features": {
+    "en": "PEG parser, bytecode compiler, custom GC (RC + mark-sweep + generational), 42K+ lines",
+    "zh-CN": "PEG解析器, 字节码编译器, 自定义GC(引用计数+标记清除+分代), 42K+行",
+    "zh-TW": "PEG解析器, 字節碼編譯器, 自定義GC(引用計數+標記清除+分代), 42K+行",
+    "ja": "PEGパーサー, バイトコードコンパイラ, カスタムGC(RC+マークスイープ+世代別), 42K+行",
+    "ko": "PEG 파서, 바이트코드 컴파일러, 커스텀 GC(RC+마크 스윕+세대별), 42K+줄",
+    "fr": "Parser PEG, compilateur bytecode, GC personnalisé (RC + marquage + générationnel), 42K+ lignes",
+    "de": "PEG-Parser, Bytecode-Compiler, benutzerdefiniertes GC (RC + Mark-Sweep + generational), 42K+ Zeilen",
+    "es": "Parser PEG, compilador bytecode, GC personalizado (RC + marca-barrido + generacional), 42K+ líneas"
+  },
+  "proj_hbe_what": {
+    "en": "A production-grade coding enhancement system with 10 specialized agents, 13 skills, and Ralph autonomous loop, supporting 10 languages and 4 AI platforms.",
+    "zh-CN": "生产级编码增强系统，10个专业代理、13个技能、Ralph自主循环，支持10种语言和4个AI平台。",
+    "zh-TW": "生產級編碼增強系統，10個專業代理、13個技能、Ralph自主循環，支持10種語言和4個AI平台。",
+    "ja": "プロダクション級コーディング強化システム。10の専門エージェント、13のスキル、Ralph自律ループ。10言語・4AIプラットフォーム対応。",
+    "ko": "프로덕션급 코딩 강화 시스템. 10개 전문 에이전트, 13개 스킬, Ralph 자율 루프. 10개 언어, 4개 AI 플랫폼 지원.",
+    "fr": "Un système d'amélioration du codage de production avec 10 agents spécialisés, 13 compétences et boucle autonome Ralph, supportant 10 langages et 4 plateformes IA.",
+    "de": "Ein produktionsreifes Coding-Enhancement-System mit 10 spezialisierten Agenten, 13 Skills und Ralph-Autonomie-Loop, 10 Sprachen und 4 KI-Plattformen.",
+    "es": "Un sistema de mejora de codificación de producción con 10 agentes especializados, 13 habilidades y bucle autónomo Ralph, soportando 10 lenguajes y 4 plataformas IA."
+  },
+  "proj_hbe_features": {
+    "en": "Agent orchestration, TDD workflow, security review, closed-loop learning, multi-platform",
+    "zh-CN": "代理编排, TDD工作流, 安全审查, 闭环学习, 多平台",
+    "zh-TW": "代理編排, TDD工作流, 安全審查, 閉環學習, 多平台",
+    "ja": "エージェントオーケストレーション, TDDワークフロー, セキュリティレビュー, クローズドループ学習, マルチプラットフォーム",
+    "ko": "에이전트 오케스트레이션, TDD 워크플로우, 보안 리뷰, 폐루프 학습, 멀티플랫폼",
+    "fr": "Orchestration d'agents, workflow TDD, revue sécurité, apprentissage en boucle fermée, multi-plateforme",
+    "de": "Agent-Orchestrierung, TDD-Workflow, Security-Review, Closed-Loop-Learning, Multi-Plattform",
+    "es": "Orquestación de agentes, workflow TDD, revisión de seguridad, aprendizaje en bucle cerrado, multiplataforma"
+  },
   "proj_features": {
     "en": "Features:", "zh-CN": "特性：", "zh-TW": "特性：", "ja": "機能：",
     "ko": "기능:", "fr": "Fonctionnalités :", "de": "Features:", "es": "Características:"

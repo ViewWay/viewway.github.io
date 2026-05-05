@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HBE — Multi-Platform AI Coding Enhancement Suite</title>
+<link rel="stylesheet" href="/assets/style.css">
+<script src="/assets/i18n.js"></script>
+<style>
+  .hero-badge {
+    display: inline-block;
+    background: var(--accent-light);
+    color: var(--accent);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  .hero-subtitle {
+    font-size: 1.05em;
+    color: var(--text-secondary);
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .quickstart-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 12px;
+    margin: 1em 0;
+  }
+  .quickstart-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+  }
+  .quickstart-card code {
+    display: block;
+    background: var(--accent-light);
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin-top: 8px;
+    font-size: 0.9em;
+    overflow-x: auto;
+    white-space: pre;
+  }
+  .arch-diagram {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 1em 0;
+    overflow-x: auto;
+  }
+  .arch-diagram pre {
+    font-family: "SF Mono", "Fira Code", "Cascadia Code", Menlo, monospace;
+    font-size: 0.82em;
+    line-height: 1.5;
+    color: var(--text);
+    margin: 0;
+    white-space: pre;
+  }
+  .platform-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+    margin: 1em 0;
+  }
+  .platform-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px;
+    text-align: center;
+    transition: transform 0.2s;
+  }
+  .platform-card:hover { transform: translateY(-2px); }
+  .platform-card .icon { font-size: 1.8em; margin-bottom: 6px; }
+  .platform-card .name { font-weight: 600; font-size: 0.95em; }
+  .lang-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 1em 0;
+  }
+  .lang-pill {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 6px 16px;
+    font-size: 0.9em;
+    font-weight: 500;
+  }
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin: 1em 0;
+  }
+  .feature-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+    transition: transform 0.2s;
+  }
+  .feature-card:hover { transform: translateY(-2px); }
+  .feature-card h3 {
+    border: none;
+    padding: 0;
+    margin: 0 0 8px 0;
+    font-size: 1.05em;
+  }
+  .feature-card p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.95em;
+    line-height: 1.6;
+  }
+  .stats-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+    margin: 1.5em 0;
+  }
+  .stat-item {
+    text-align: center;
+  }
+  .stat-value {
+    font-size: 2em;
+    font-weight: 700;
+    color: var(--accent);
+  }
+  .stat-label {
+    font-size: 0.85em;
+    color: var(--text-secondary);
+    margin-top: 2px;
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="/" class="nav-brand">HongLin He</a>
+  <div class="nav-links">
+    <a href="/projects.html">← Projects</a>
+    <a href="https://github.com/ViewWay/hermes-by-everythings">GitHub</a>
+  </div>
+  <div class="nav-controls">
+    <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">🌙</button>
+  </div>
+</nav>
+
+<main class="container">
+
+  <!-- ═══ Hero ═══ -->
+  <div class="hero">
+    <span class="hero-badge">v3.3.0 · Based on ECC v2.0</span>
+    <h1>HBE — Hermes-by-Everythings</h1>
+    <p class="hero-subtitle">
+      A production-grade, multi-platform AI coding enhancement suite.
+      10 specialized agents, 13 skills, Ralph autonomous loop — supporting 10 languages across 4 AI platforms.
+    </p>
+  </div>
+
+  <!-- ═══ Stats ═══ -->
+  <div class="stats-row">
+    <div class="stat-item">
+      <div class="stat-value">10</div>
+      <div class="stat-label">Specialized Agents</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">13</div>
+      <div class="stat-label">Core Skills</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">15</div>
+      <div class="stat-label">Commands</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">8</div>
+      <div class="stat-label">Rule Files</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">4</div>
+      <div class="stat-label">AI Platforms</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">10</div>
+      <div class="stat-label">Languages</div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ═══ Agent Table ═══ -->
+  <h2>Specialized Agents</h2>
+  <p>Each agent is purpose-built for a specific phase of the development lifecycle, orchestrated by a central coordinator.</p>
+
+  <table class="results-table">
+    <thead>
+      <tr>
+        <th>Agent</th>
+        <th>Command</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Orchestrator</strong></td>
+        <td><code>hbe:orchestrate</code></td>
+        <td>Central coordinator — dispatches tasks to specialized agents, manages workflow state and dependencies.</td>
+      </tr>
+      <tr>
+        <td><strong>Planner</strong></td>
+        <td><code>hbe:plan</code></td>
+        <td>Decomposes feature requests into structured task trees with acceptance criteria and priority ordering.</td>
+      </tr>
+      <tr>
+        <td><strong>Architect</strong></td>
+        <td><code>hbe:architect</code></td>
+        <td>Designs system architecture, module boundaries, API contracts, and data flow diagrams.</td>
+      </tr>
+      <tr>
+        <td><strong>Code Reviewer</strong></td>
+        <td><code>hbe:review</code></td>
+        <td>Performs deep code review — style, patterns, complexity, maintainability, and best practice compliance.</td>
+      </tr>
+      <tr>
+        <td><strong>Security Reviewer</strong></td>
+        <td><code>hbe:security</code></td>
+        <td>Scans for vulnerabilities, insecure patterns, dependency risks, and OWASP compliance issues.</td>
+      </tr>
+      <tr>
+        <td><strong>TDD Guide</strong></td>
+        <td><code>hbe:tdd</code></td>
+        <td>Guides test-driven development workflow — writes failing tests first, then implementation to pass.</td>
+      </tr>
+      <tr>
+        <td><strong>Build Error Resolver</strong></td>
+        <td><code>hbe:fix-build</code></td>
+        <td>Diagnoses and resolves compilation errors, dependency conflicts, and CI pipeline failures.</td>
+      </tr>
+      <tr>
+        <td><strong>E2E Runner</strong></td>
+        <td><code>hbe:e2e</code></td>
+        <td>Generates and executes end-to-end tests, validates integration points and user workflows.</td>
+      </tr>
+      <tr>
+        <td><strong>Refactor Cleaner</strong></td>
+        <td><code>hbe:refactor</code></td>
+        <td>Identifies code smells and applies safe refactoring — renaming, extraction, simplification, deduplication.</td>
+      </tr>
+      <tr>
+        <td><strong>Ralph (Autonomous)</strong></td>
+        <td><code>hbe:ralph</code></td>
+        <td>Self-supervised autonomous loop — iteratively plans, executes, reviews, and fixes without human intervention.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <!-- ═══ Core Features ═══ -->
+  <h2>Core Features</h2>
+
+  <div class="feature-grid">
+    <div class="feature-card">
+      <h3>🎯 Agent Orchestration</h3>
+      <p>The Orchestrator agent coordinates all 10 specialized agents in a dependency-aware pipeline. Tasks are dispatched in parallel when possible and sequenced when required, with automatic retry and fallback strategies.</p>
+    </div>
+    <div class="feature-card">
+      <h3>🧪 TDD Workflow</h3>
+      <p>Built-in test-driven development cycle: write failing tests → implement code → verify pass → refactor. The TDD Guide agent enforces red-green-refactor discipline across all supported languages.</p>
+    </div>
+    <div class="feature-card">
+      <h3>🔒 Security Review</h3>
+      <p>Automated security scanning with the Security Reviewer agent. Detects injection vulnerabilities, insecure dependencies, hardcoded secrets, and OWASP Top 10 compliance gaps before code reaches production.</p>
+    </div>
+    <div class="feature-card">
+      <h3>🔁 Closed-Loop Learning</h3>
+      <p>Ralph's autonomous loop applies feedback from each cycle to improve subsequent iterations. Build errors, test failures, and review comments feed back into planning for continuous improvement.</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ═══ Architecture ═══ -->
+  <h2>Architecture</h2>
+
+  <div class="arch-diagram">
+<pre>
+┌─────────────────────────────────────────────────────────────────┐
+│                        User / IDE / CLI                          │
+└──────────────────────────┬──────────────────────────────────────┘
+                           │
+                           ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                    HBE Orchestrator Agent                        │
+│  ┌─────────┐  ┌─────────┐  ┌───────────┐  ┌───────────────┐   │
+│  │ Planner │  │Architect│  │ TDD Guide │  │ Code Reviewer │   │
+│  └────┬────┘  └────┬────┘  └─────┬─────┘  └───────┬───────┘   │
+│       │            │             │                 │            │
+│  ┌────▼────────────▼─────────────▼─────────────────▼───────┐   │
+│  │              Shared Context & Rule Engine                │   │
+│  │          (13 Skills · 8 Rule Files · 15 Commands)       │   │
+│  └────┬────────────┬──────────────┬─────────────────┬──────┘   │
+│       │            │              │                 │           │
+│  ┌────▼────┐  ┌────▼──────┐  ┌───▼──────┐  ┌──────▼────────┐  │
+│  │Security │  │Build Error│  │  E2E     │  │   Refactor    │  │
+│  │Reviewer │  │ Resolver  │  │  Runner  │  │   Cleaner     │  │
+│  └─────────┘  └───────────┘  └──────────┘  └───────────────┘  │
+│                           │                                     │
+│                    ┌──────▼──────┐                              │
+│                    │    Ralph    │                              │
+│                    │  Autonomous │                              │
+│                    │    Loop     │                              │
+│                    └─────────────┘                              │
+└──────────────────────────┬──────────────────────────────────────┘
+                           │
+              ┌────────────┼────────────┐
+              ▼            ▼            ▼
+        ┌──────────┐ ┌──────────┐ ┌──────────┐
+        │  Claude  │ │  Hermes  │ │ OpenCode │
+        │  Code    │ │  Agent   │ │          │
+        └──────────┘ └──────────┘ └──────────┘
+              + OpenClaw
+</pre>
+  </div>
+
+  <hr>
+
+  <!-- ═══ Quick Start ═══ -->
+  <h2>Quick Start</h2>
+
+  <div class="quickstart-grid">
+    <div class="quickstart-card">
+      <strong>1. Clone the repository</strong>
+      <code>git clone https://github.com/ViewWay/hermes-by-everythings.git
+cd hermes-by-everythings</code>
+    </div>
+    <div class="quickstart-card">
+      <strong>2. Install for your platform</strong>
+      <code># Claude Code
+cp -r .claude/ ~/.claude/
+
+# Hermes Agent
+cp -r .hermes/ ~/.hermes/
+
+# OpenCode / OpenClaw
+cp -r .opencode/ ~/.opencode/</code>
+    </div>
+    <div class="quickstart-card">
+      <strong>3. Start coding</strong>
+      <code># Plan a feature
+hbe:plan "Add user auth"
+
+# Run full orchestration
+hbe:orchestrate "Implement REST API"
+
+# Let Ralph handle it
+hbe:ralph "Fix all failing tests"</code>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ═══ Supported Platforms ═══ -->
+  <h2>Supported AI Platforms</h2>
+
+  <div class="platform-grid">
+    <div class="platform-card">
+      <div class="icon">🤖</div>
+      <div class="name">Claude Code</div>
+    </div>
+    <div class="platform-card">
+      <div class="icon">⚡</div>
+      <div class="name">Hermes Agent</div>
+    </div>
+    <div class="platform-card">
+      <div class="icon">🔓</div>
+      <div class="name">OpenCode</div>
+    </div>
+    <div class="platform-card">
+      <div class="icon">🐾</div>
+      <div class="name">OpenClaw</div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ═══ Supported Languages ═══ -->
+  <h2>Supported Languages</h2>
+
+  <div class="lang-pills">
+    <span class="lang-pill">TypeScript / JavaScript</span>
+    <span class="lang-pill">Python</span>
+    <span class="lang-pill">Rust</span>
+    <span class="lang-pill">Go</span>
+    <span class="lang-pill">Java</span>
+    <span class="lang-pill">Kotlin</span>
+    <span class="lang-pill">C#</span>
+    <span class="lang-pill">Ruby</span>
+    <span class="lang-pill">PHP</span>
+    <span class="lang-pill">Swift</span>
+  </div>
+
+  <hr>
+
+  <!-- ═══ Skills & Commands ═══ -->
+  <h2>13 Core Skills</h2>
+  <p>Skills are composable building blocks that agents use to accomplish tasks. Each skill is a self-contained capability that can be invoked independently or composed within workflows.</p>
+
+  <table class="results-table">
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Skills</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Planning</strong></td>
+        <td>task decomposition, dependency analysis, acceptance criteria generation</td>
+      </tr>
+      <tr>
+        <td><strong>Architecture</strong></td>
+        <td>module design, API contract definition, data flow modeling</td>
+      </tr>
+      <tr>
+        <td><strong>Code Generation</strong></td>
+        <td>multi-language codegen, template instantiation, pattern application</td>
+      </tr>
+      <tr>
+        <td><strong>Testing</strong></td>
+        <td>unit test generation, integration test scaffolding, e2e scenario creation</td>
+      </tr>
+      <tr>
+        <td><strong>Review</strong></td>
+        <td>static analysis, style enforcement, complexity scoring</td>
+      </tr>
+      <tr>
+        <td><strong>Security</strong></td>
+        <td>vulnerability scanning, dependency audit, secret detection</td>
+      </tr>
+      <tr>
+        <td><strong>Refactoring</strong></td>
+        <td>dead code elimination, deduplication, extraction, renaming</td>
+      </tr>
+      <tr>
+        <td><strong>Build</strong></td>
+        <td>error diagnosis, dependency resolution, CI/CD pipeline fixing</td>
+      </tr>
+      <tr>
+        <td><strong>Documentation</strong></td>
+        <td>doc generation, README scaffolding, API docs from code</td>
+      </tr>
+      <tr>
+        <td><strong>Orchestration</strong></td>
+        <td>workflow coordination, parallel dispatch, state management</td>
+      </tr>
+      <tr>
+        <td><strong>Learning</strong></td>
+        <td>feedback ingestion, pattern memorization, iteration improvement</td>
+      </tr>
+      <tr>
+        <td><strong>Configuration</strong></td>
+        <td>project setup, lint config, CI templates, environment bootstrapping</td>
+      </tr>
+      <tr>
+        <td><strong>Communication</strong></td>
+        <td>progress reporting, summary generation, changelog creation</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <!-- ═══ Ralph Loop ═══ -->
+  <h2>Ralph Autonomous Loop</h2>
+
+  <div class="arch-diagram">
+<pre>
+  ┌──────────┐     ┌──────────┐     ┌──────────┐     ┌──────────┐
+  │          │     │          │     │          │     │          │
+  │  PLAN    │────▶│  EXECUTE │────▶│  REVIEW  │────▶│   FIX    │
+  │          │     │          │     │          │     │          │
+  └──────────┘     └──────────┘     └──────────┘     └──────────┘
+       ▲                                                   │
+       │                                                   │
+       └───────────────── FEEDBACK ◀───────────────────────┘
+
+  Repeat until:
+    ✓ All tests pass
+    ✓ No build errors
+    ✓ Security review clean
+    ✓ Code review approved
+</pre>
+  </div>
+
+  <p>Ralph operates as an unattended autonomous agent that iterates through plan → execute → review → fix cycles. Each iteration incorporates feedback from the previous one, creating a closed-loop learning system that converges on high-quality output without human intervention.</p>
+
+  <hr>
+
+  <!-- ═══ Links ═══ -->
+  <h2>Links</h2>
+  <ul>
+    <li><a href="https://github.com/ViewWay/hermes-by-everythings">GitHub Repository</a></li>
+    <li><a href="/projects.html">← Back to Projects</a></li>
+  </ul>
+
+</main>
+
+<footer class="site-footer">
+  <p>&copy; 2026 HongLin He</p>
+</footer>
+
+</body>
+</html>

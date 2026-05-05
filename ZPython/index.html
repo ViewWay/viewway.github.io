@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZPython — Python 3.15 Interpreter in Zig</title>
+<link rel="stylesheet" href="/assets/style.css">
+<script src="/assets/i18n.js"></script>
+<style>
+  .hero-badge {
+    display: inline-block;
+    background: var(--accent-light);
+    color: var(--accent);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  .arch-flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 1.5em 0;
+    padding: 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+  .arch-flow .stage {
+    background: var(--accent);
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95em;
+    text-align: center;
+  }
+  .arch-flow .arrow {
+    color: var(--text-secondary);
+    font-size: 1.4em;
+    font-weight: 700;
+  }
+  .module-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin: 1em 0;
+  }
+  .module-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+    transition: transform 0.2s;
+  }
+  .module-card:hover { transform: translateY(-2px); }
+  .module-card h3 {
+    border: none;
+    margin-top: 0;
+    padding: 0;
+    font-size: 1.15em;
+  }
+  .module-card ul {
+    padding-left: 18px;
+    margin: 8px 0;
+  }
+  .module-card li {
+    margin-bottom: 4px;
+    font-size: 0.92em;
+    color: var(--text-secondary);
+  }
+  .gc-layers {
+    list-style: none;
+    padding: 0;
+    margin: 1em 0;
+  }
+  .gc-layers li {
+    padding: 12px 16px;
+    margin-bottom: 8px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    border-left: 4px solid var(--accent);
+  }
+  .gc-layers li strong {
+    color: var(--accent);
+  }
+  .code-block {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 16px 20px;
+    font-family: "SF Mono", "Fira Code", "Consolas", monospace;
+    font-size: 0.88em;
+    line-height: 1.65;
+    overflow-x: auto;
+    margin: 1em 0;
+    white-space: pre;
+  }
+  .stat-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    margin: 1em 0 2em;
+  }
+  .stat-item {
+    text-align: center;
+    padding: 16px 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    min-width: 120px;
+  }
+  .stat-item .num {
+    font-size: 2em;
+    font-weight: 700;
+    color: var(--accent);
+    display: block;
+  }
+  .stat-item .label {
+    font-size: 0.85em;
+    color: var(--text-secondary);
+    margin-top: 4px;
+  }
+  .roadmap-list {
+    list-style: none;
+    padding: 0;
+  }
+  .roadmap-list li {
+    padding: 10px 16px;
+    margin-bottom: 6px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    position: relative;
+    padding-left: 32px;
+  }
+  .roadmap-list li::before {
+    content: "○";
+    position: absolute;
+    left: 12px;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .roadmap-list li.done::before {
+    content: "●";
+  }
+</style>
+</head>
+<body>
+<nav class="site-nav">
+  <a href="/" class="nav-brand">HongLin He</a>
+  <div class="nav-links">
+    <a href="/projects.html">&#8592; Projects</a>
+  </div>
+  <div class="nav-controls">
+    <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">&#127769;</button>
+  </div>
+</nav>
+
+<main class="container">
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-badge">🐍 Open Source</div>
+    <h1>ZPython</h1>
+    <p class="tagline">
+      A complete Python 3.15 interpreter implemented from scratch in Zig —
+      PEG parser, bytecode compiler, custom GC, and bytecode VM.
+    </p>
+    <p style="margin-top: 16px;">
+      <a href="https://github.com/ViewWay/ZPython" style="font-weight:600;">GitHub Repository</a>
+    </p>
+  </div>
+
+  <!-- Stats -->
+  <div class="stat-row">
+    <div class="stat-item">
+      <span class="num">111</span>
+      <span class="label">Zig source files</span>
+    </div>
+    <div class="stat-item">
+      <span class="num">42K+</span>
+      <span class="label">Lines of code</span>
+    </div>
+    <div class="stat-item">
+      <span class="num">4</span>
+      <span class="label">Core modules</span>
+    </div>
+    <div class="stat-item">
+      <span class="num">5</span>
+      <span class="label">GC strategies</span>
+    </div>
+  </div>
+
+  <!-- Architecture Overview -->
+  <h2>Architecture Overview</h2>
+  <p>ZPython follows a classic compiler-and-VM pipeline. Python source code is parsed into an AST by a PEG parser, compiled to bytecode, and then executed by a stack-based virtual machine with a multi-strategy garbage collector.</p>
+
+  <div class="arch-flow">
+    <div class="stage">Source Code</div>
+    <span class="arrow">&#8594;</span>
+    <div class="stage">PEG Parser</div>
+    <span class="arrow">&#8594;</span>
+    <div class="stage">AST</div>
+    <span class="arrow">&#8594;</span>
+    <div class="stage">Bytecode Compiler</div>
+    <span class="arrow">&#8594;</span>
+    <div class="stage">Bytecode</div>
+    <span class="arrow">&#8594;</span>
+    <div class="stage">VM Execution</div>
+  </div>
+
+  <h2>Module Details</h2>
+  <div class="module-grid">
+    <!-- common -->
+    <div class="module-card">
+      <h3>common</h3>
+      <p>Foundation types and utilities shared across all modules.</p>
+      <ul>
+        <li>Object system core (PyObject, type descriptors)</li>
+        <li>Unicode string handling</li>
+        <li>Error / exception definitions</li>
+        <li>Shared memory allocators</li>
+        <li>Common data structures</li>
+      </ul>
+    </div>
+    <!-- compiler -->
+    <div class="module-card">
+      <h3>compiler</h3>
+      <p>Front-end: parsing and bytecode generation.</p>
+      <ul>
+        <li>PEG parser (lexer + recursive-descent)</li>
+        <li>AST node definitions &amp; visitors</li>
+        <li>Semantic analysis &amp; symbol resolution</li>
+        <li>Bytecode emitter &amp; optimization</li>
+        <li>Code object layout</li>
+      </ul>
+    </div>
+    <!-- vm -->
+    <div class="module-card">
+      <h3>vm</h3>
+      <p>Runtime: execution engine and built-in services.</p>
+      <ul>
+        <li>Stack-based bytecode interpreter</li>
+        <li>Frame / call-stack management</li>
+        <li>Built-in functions &amp; types</li>
+        <li>Module import system</li>
+        <li>Garbage collector (multi-strategy)</li>
+      </ul>
+    </div>
+    <!-- zpython -->
+    <div class="module-card">
+      <h3>zpython</h3>
+      <p>Top-level integration: the CLI and public API.</p>
+      <ul>
+        <li>REPL (read-eval-print loop)</li>
+        <li>File execution entry point</li>
+        <li>CLI argument parsing</li>
+        <li>Module initialization orchestration</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- GC Design -->
+  <h2>Garbage Collector Design</h2>
+  <p>ZPython employs a <strong>hybrid, multi-strategy garbage collector</strong> that combines several complementary techniques to achieve low-latency, high-throughput memory management:</p>
+
+  <ul class="gc-layers">
+    <li>
+      <strong>Reference Counting</strong> — Primary reclamation mechanism. Every object carries a refcount that is incremented/decremented on assignment. Zero-count objects are freed immediately, providing deterministic deallocation and low pause times.
+    </li>
+    <li>
+      <strong>Mark-and-Sweep</strong> — Handles reference cycles that refcounting alone cannot collect. Periodic full-heap scans mark reachable objects from roots and sweep unreachable ones.
+    </li>
+    <li>
+      <strong>Generational Collection</strong> — Objects are divided into generations based on survival time. Young generations are collected frequently (most objects die young), while old generations are collected less often, reducing overall GC overhead.
+    </li>
+    <li>
+      <strong>Concurrent Collection</strong> — GC work is offloaded to a background thread where possible, minimizing stop-the-world pauses and keeping mutator throughput high.
+    </li>
+    <li>
+      <strong>Hybrid Orchestration</strong> — A policy layer dynamically selects the most appropriate GC strategy based on heap pressure, allocation rate, and fragmentation, blending the above strategies for optimal performance.
+    </li>
+  </ul>
+
+  <!-- Quick Start -->
+  <h2>Quick Start</h2>
+
+  <h3>Prerequisites</h3>
+  <p>Zig 0.13+ (or a recent nightly build). Clone and build:</p>
+
+  <div class="code-block">git clone https://github.com/ViewWay/ZPython.git
+cd ZPython
+zig build -Doptimize=ReleaseFast</div>
+
+  <h3>Run a Python File</h3>
+  <div class="code-block">./zig-out/bin/zpython hello.py</div>
+
+  <h3>Interactive REPL</h3>
+  <div class="code-block">./zig-out/bin/zpython
+&gt;&gt;&gt; def fib(n):
+...     if n &lt;= 1:
+...         return n
+...     return fib(n - 1) + fib(n - 2)
+...
+&gt;&gt;&gt; fib(20)
+6765</div>
+
+  <h3>Example: hello.py</h3>
+  <div class="code-block"># hello.py — ZPython demo
+class Greeter:
+    def __init__(self, name):
+        self.name = name
+
+    def greet(self):
+        return f"Hello, {self.name}!"
+
+g = Greeter("ZPython")
+print(g.greet())  # Hello, ZPython!</div>
+
+  <!-- Roadmap -->
+  <h2>Roadmap</h2>
+  <ul class="roadmap-list">
+    <li class="done">PEG parser for full Python 3.15 syntax</li>
+    <li class="done">Bytecode compiler with optimization passes</li>
+    <li class="done">Stack-based bytecode VM with frame management</li>
+    <li class="done">Reference counting GC</li>
+    <li class="done">Mark-and-sweep cycle collection</li>
+    <li class="done">Generational garbage collector</li>
+    <li class="done">Concurrent GC thread</li>
+    <li class="done">Hybrid GC policy orchestration</li>
+    <li>Complete built-in type coverage (list, dict, set, etc.)</li>
+    <li>Standard library module stubs (os, sys, math, …)</li>
+    <li>C extension module compatibility layer</li>
+    <li>JIT compilation tier (LLVM or custom backend)</li>
+    <li>CPython test-suite compliance benchmarking</li>
+  </ul>
+
+  <hr>
+
+  <p style="text-align:center;">
+    <a href="/projects.html">&#8592; Back to Projects</a>
+    &nbsp;&middot;&nbsp;
+    <a href="https://github.com/ViewWay/ZPython">GitHub</a>
+  </p>
+
+</main>
+
+<footer class="site-footer">
+  <p>&copy; 2026 HongLin He &nbsp;&middot;&nbsp; ZPython Project</p>
+</footer>
+</body>
+</html>
