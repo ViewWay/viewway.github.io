@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — HongLin He</title>
+<link rel="stylesheet" href="/assets/style.css">
+<script src="/assets/i18n.js"></script>
+</head>
+<body>
+<nav class="site-nav">
+  <a href="/" class="nav-brand">HongLin He</a>
+  <div class="nav-links">
+    <a href="/papers.html" data-i18n="nav_papers">Papers</a>
+    <a href="/projects.html" class="active" data-i18n="nav_projects">Projects</a>
+    <a href="/awards.html" data-i18n="nav_awards">Awards</a>
+    <a href="/cv.html" data-i18n="nav_cv">CV</a>
+  </div>
+  <div class="nav-controls">
+    <select id="lang-select" onchange="switchLang(this.value)">
+      <option value="en">English</option>
+      <option value="zh-CN">中文简体</option>
+      <option value="zh-TW">中文繁體</option>
+      <option value="ja">日本語</option>
+      <option value="ko">한국어</option>
+      <option value="fr">Français</option>
+      <option value="de">Deutsch</option>
+      <option value="es">Español</option>
+    </select>
+    <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">🌙</button>
+  </div>
+</nav>
+
+<main class="container">
+  <h1 data-i18n="projects_title">Projects</h1>
+
+  <!-- UCEF -->
+  <div class="project-card">
+    <h3>🔬 UCEF — Universal Context Extension Framework</h3>
+    <p><strong data-i18n="proj_what">What:</strong> <span data-i18n="proj_ucef_what">A model-agnostic framework that enables any LLM to process documents exceeding its context window.</span></p>
+    <p><strong data-i18n="proj_how">How:</strong> <span data-i18n="proj_ucef_how">Hyperbolic retrieval + quantum-inspired selection + adaptive compression + quality feedback loop.</span></p>
+    <p><strong data-i18n="proj_stack">Stack:</strong> Python, NumPy, SciPy, Zhipu API, DeepSeek API, LongBench</p>
+    <p><strong data-i18n="proj_links">Links:</strong>
+      <a href="https://github.com/ViewWay/UCEF">GitHub</a> ·
+      <a href="https://viewway.github.io/UCEF/">Docs</a>
+    </p>
+  </div>
+
+  <hr>
+
+  <!-- FeMeter -->
+  <div class="project-card">
+    <h3>⚡ FeMeter — Three-Phase Smart Energy Meter Firmware</h3>
+    <p><strong data-i18n="proj_what">What:</strong> <span data-i18n="proj_femeter_what">Rust firmware for FM33A0xx (Cortex-M0+) three-phase smart electricity meters.</span></p>
+    <p><strong data-i18n="proj_features">Features:</strong> <span data-i18n="proj_femeter_features">6×UART + 2×LPUART, FreeRTOS 11.x, DL/T645 protocol, ~10,400 lines</span></p>
+    <p><strong data-i18n="proj_stack">Stack:</strong> Rust, embedded, thumbv6m-none-eabi</p>
+    <p><strong data-i18n="proj_links">Links:</strong>
+      <a href="https://github.com/ViewWay/FeMeter">GitHub</a>
+    </p>
+  </div>
+
+  <hr>
+
+  <!-- DevPilot -->
+  <div class="project-card">
+    <h3>🖥️ DevPilot — Desktop AI Development Assistant</h3>
+    <p><strong data-i18n="proj_what">What:</strong> <span data-i18n="proj_devpilot_what">A Tauri 2 desktop application for AI-powered development workflow management.</span></p>
+    <p><strong data-i18n="proj_features">Features:</strong> <span data-i18n="proj_devpilot_features">15 crates, full-stack (Rust backend + React frontend), LLM integration</span></p>
+    <p><strong data-i18n="proj_stack">Stack:</strong> Rust, Tauri 2, React, TypeScript, Zustand</p>
+    <p><strong data-i18n="proj_links">Links:</strong>
+      <a href="https://github.com/ViewWay/DevPilot">GitHub</a>
+    </p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <p>&copy; 2026 HongLin He</p>
+</footer>
+</body>
+</html>

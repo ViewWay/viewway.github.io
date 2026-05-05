@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV — HongLin He</title>
+<link rel="stylesheet" href="/assets/style.css">
+<script src="/assets/i18n.js"></script>
+</head>
+<body>
+<nav class="site-nav">
+  <a href="/" class="nav-brand">HongLin He</a>
+  <div class="nav-links">
+    <a href="/papers.html" data-i18n="nav_papers">Papers</a>
+    <a href="/projects.html" data-i18n="nav_projects">Projects</a>
+    <a href="/awards.html" data-i18n="nav_awards">Awards</a>
+    <a href="/cv.html" class="active" data-i18n="nav_cv">CV</a>
+  </div>
+  <div class="nav-controls">
+    <select id="lang-select" onchange="switchLang(this.value)">
+      <option value="en">English</option>
+      <option value="zh-CN">中文简体</option>
+      <option value="zh-TW">中文繁體</option>
+      <option value="ja">日本語</option>
+      <option value="ko">한국어</option>
+      <option value="fr">Français</option>
+      <option value="de">Deutsch</option>
+      <option value="es">Español</option>
+    </select>
+    <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">🌙</button>
+  </div>
+</nav>
+
+<main class="container">
+  <h1 data-i18n="cv_title">CV</h1>
+
+  <h2 data-i18n="cv_education">Education</h2>
+  <ul>
+    <li><strong data-i18n="cv_selfresearch">Self-directed Research</strong> <span data-i18n="cv_mlfocus">in Machine Learning &amp; NLP (2024–present)</span>
+      <ul><li data-i18n="cv_mltopic">Focus: Hyperbolic geometry, quantum-inspired IR, LLM context extension</li></ul>
+    </li>
+    <li><strong data-i18n="cv_infosec">Information Security Engineer</strong> — <span data-i18n="cv_ruankao">National Computer Technology Qualification (in preparation)</span></li>
+  </ul>
+
+  <h2 data-i18n="cv_skills">Technical Skills</h2>
+  <table class="cv-table">
+    <tr><td><strong>Languages:</strong></td><td>Rust, Python, TypeScript, Zig, C</td></tr>
+    <tr><td><strong>AI/ML:</strong></td><td>PyTorch, LLM APIs (OpenAI, Zhipu, DeepSeek), RAG, context compression</td></tr>
+    <tr><td><strong>Embedded:</strong></td><td>Cortex-M0+/M4, FreeRTOS, thumbv6m-none-eabi, FM33A0xx</td></tr>
+    <tr><td><strong>Frontend:</strong></td><td>React, Tauri 2, Zustand, Vite</td></tr>
+    <tr><td><strong>Tools:</strong></td><td>Git, GitHub Actions, MkDocs, LaTeX, Docker</td></tr>
+  </table>
+
+  <h2 data-i18n="cv_projects">Projects</h2>
+  <table class="cv-table">
+    <thead><tr><th>Project</th><th>Description</th><th>Stack</th></tr></thead>
+    <tbody>
+      <tr><td><a href="https://github.com/ViewWay/UCEF">UCEF</a></td><td data-i18n="cv_proj_ucef">LLM context extension framework</td><td>Python, NumPy</td></tr>
+      <tr><td><a href="https://github.com/ViewWay/FeMeter">FeMeter</a></td><td data-i18n="cv_proj_femeter">Smart energy meter firmware</td><td>Rust, Embedded</td></tr>
+      <tr><td><a href="https://github.com/ViewWay/DevPilot">DevPilot</a></td><td data-i18n="cv_proj_devpilot">Desktop AI dev assistant</td><td>Tauri 2, React</td></tr>
+    </tbody>
+  </table>
+
+  <h2 data-i18n="cv_pubs">Publications</h2>
+  <ul>
+    <li>"UCEF: Universal Context Extension Framework", arXiv, 2026 (submitted)</li>
+  </ul>
+</main>
+
+<footer class="site-footer">
+  <p>&copy; 2026 HongLin He</p>
+</footer>
+</body>
+</html>

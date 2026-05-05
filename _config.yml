@@ -1,22 +1,8 @@
-theme: minima
-title: Honglin He
-description: Researcher in Hyperbolic Geometry, Quantum-Inspired IR, and LLM Context Extension
-author:
-  name: Honglin He
-  email: hehonglin525@gmail.com
-github_username: ViewWay
-url: "https://viewway.github.io"
-
+theme: null
 markdown: kramdown
-kramdown:
-  math_engine: mathjax
-
-plugins:
-  - jekyll-seo-tag
-  - jekyll-sitemap
-
-header_pages:
-  - papers.md
-  - projects.md
+exclude:
+  - README.md
   - awards.md
   - cv.md
+  - papers.md
+  - projects.md
