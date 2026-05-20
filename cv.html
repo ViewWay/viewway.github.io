@@ -34,41 +34,241 @@
 <main class="container">
   <h1 data-i18n="cv_title">CV</h1>
 
-  <h2 data-i18n="cv_education">Education</h2>
-  <ul>
-    <li><strong data-i18n="cv_selfresearch">Self-directed Research</strong> <span data-i18n="cv_mlfocus">in Machine Learning &amp; NLP (2024–present)</span>
-      <ul><li data-i18n="cv_mltopic">Focus: Hyperbolic geometry, quantum-inspired IR, LLM context extension</li></ul>
-    </li>
-    <li><strong data-i18n="cv_infosec">Information Security Engineer</strong> — <span data-i18n="cv_ruankao">National Computer Technology Qualification (in preparation)</span></li>
-  </ul>
+  <!-- Profile -->
+  <section class="animate-on-scroll">
+    <div class="cv-profile-card">
+      <div class="cv-profile-header">
+        <img src="https://avatars.githubusercontent.com/u/57283862?v=4" alt="HongLin He" class="cv-avatar">
+        <div>
+          <h2 style="margin-top:0;border:none;padding:0">HongLin He</h2>
+          <p class="tagline" data-i18n="cv_tagline" style="margin:0;font-size:1em;max-width:500px">Independent researcher · Full-stack engineer · Open source contributor</p>
+        </div>
+      </div>
+      <div class="cv-contact-row">
+        <span>✉ <a href="mailto:hehonglin525@gmail.com">hehonglin525@gmail.com</a></span>
+        <span>⌘ <a href="https://github.com/ViewWay">GitHub/ViewWay</a></span>
+        <span>🌐 <a href="https://viewway.github.io">viewway.github.io</a></span>
+      </div>
+    </div>
+  </section>
 
-  <h2 data-i18n="cv_skills">Technical Skills</h2>
-  <table class="cv-table">
-    <tr><td><strong>Languages:</strong></td><td>Rust, Python, TypeScript, Zig, C</td></tr>
-    <tr><td><strong>AI/ML:</strong></td><td>PyTorch, LLM APIs (OpenAI, Zhipu, DeepSeek), RAG, context compression</td></tr>
-    <tr><td><strong>Embedded:</strong></td><td>Cortex-M0+/M4, FreeRTOS, thumbv6m-none-eabi, FM33A0xx</td></tr>
-    <tr><td><strong>Frontend:</strong></td><td>React, Tauri 2, Zustand, Vite</td></tr>
-    <tr><td><strong>Tools:</strong></td><td>Git, GitHub Actions, MkDocs, LaTeX, Docker</td></tr>
-  </table>
+  <hr class="section-divider">
 
-  <h2 data-i18n="cv_projects">Projects</h2>
-  <table class="cv-table">
-    <thead><tr><th>Project</th><th>Description</th><th>Stack</th></tr></thead>
-    <tbody>
-      <tr><td><a href="https://github.com/ViewWay/UCEF">UCEF</a></td><td data-i18n="cv_proj_ucef">LLM context extension framework</td><td>Python, NumPy</td></tr>
-      <tr><td><a href="https://github.com/ViewWay/FeMeter">FeMeter</a></td><td data-i18n="cv_proj_femeter">Smart energy meter firmware</td><td>Rust, Embedded</td></tr>
-      <tr><td><a href="https://github.com/ViewWay/DevPilot">DevPilot</a></td><td data-i18n="cv_proj_devpilot">Desktop AI dev assistant</td><td>Tauri 2, React</td></tr>
-    </tbody>
-  </table>
+  <!-- Education -->
+  <section class="animate-on-scroll">
+    <h2 data-i18n="cv_education">Education</h2>
+    <div class="cv-timeline">
+      <div class="cv-timeline-item">
+        <div class="cv-timeline-dot"></div>
+        <div class="cv-timeline-content">
+          <h3 data-i18n="cv_selfresearch">Self-directed Research</h3>
+          <p class="cv-timeline-date" data-i18n="cv_mlfocus">in Machine Learning &amp; NLP (2024–present)</p>
+          <p data-i18n="cv_mltopic">Focus: Hyperbolic geometry, quantum-inspired IR, LLM context extension</p>
+        </div>
+      </div>
+      <div class="cv-timeline-item">
+        <div class="cv-timeline-dot"></div>
+        <div class="cv-timeline-content">
+          <h3 data-i18n="cv_infosec">Information Security Engineer</h3>
+          <p class="cv-timeline-date" data-i18n="cv_ruankao">National Computer Technology Qualification (in preparation)</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <h2 data-i18n="cv_pubs">Publications</h2>
-  <ul>
-    <li>"UCEF: Universal Context Extension Framework", arXiv, 2026 (submitted)</li>
-  </ul>
+  <hr class="section-divider">
+
+  <!-- Skills -->
+  <section class="animate-on-scroll">
+    <h2 data-i18n="cv_skills">Technical Skills</h2>
+    <div class="skills-section">
+      <div class="skills-category">
+        <h3 data-i18n="cv_sk_lang">Programming Languages</h3>
+        <div class="skills-tags">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">Rust</span>
+          <span class="skill-tag">Zig</span>
+          <span class="skill-tag">TypeScript</span>
+          <span class="skill-tag">Go</span>
+          <span class="skill-tag">C/C++</span>
+          <span class="skill-tag">Java</span>
+          <span class="skill-tag">Shell</span>
+        </div>
+      </div>
+      <div class="skills-category">
+        <h3 data-i18n="cv_sk_ai">AI / Machine Learning</h3>
+        <div class="skills-tags">
+          <span class="skill-tag">PyTorch</span>
+          <span class="skill-tag">NumPy</span>
+          <span class="skill-tag">SciPy</span>
+          <span class="skill-tag">LLM APIs</span>
+          <span class="skill-tag">RAG</span>
+          <span class="skill-tag">Hyperbolic Embeddings</span>
+          <span class="skill-tag">Context Compression</span>
+        </div>
+      </div>
+      <div class="skills-category">
+        <h3 data-i18n="cv_sk_embedded">Embedded &amp; IoT</h3>
+        <div class="skills-tags">
+          <span class="skill-tag">Cortex-M0+/M4</span>
+          <span class="skill-tag">FreeRTOS</span>
+          <span class="skill-tag">no_std Rust</span>
+          <span class="skill-tag">DLMS/COSEM</span>
+          <span class="skill-tag">Smart Metering</span>
+        </div>
+      </div>
+      <div class="skills-category">
+        <h3 data-i18n="cv_sk_web">Web &amp; Desktop</h3>
+        <div class="skills-tags">
+          <span class="skill-tag">React</span>
+          <span class="skill-tag">Vue</span>
+          <span class="skill-tag">Tauri 2</span>
+          <span class="skill-tag">FastAPI</span>
+          <span class="skill-tag">Zustand</span>
+          <span class="skill-tag">Vite</span>
+        </div>
+      </div>
+      <div class="skills-category">
+        <h3 data-i18n="cv_sk_tools">Tools &amp; DevOps</h3>
+        <div class="skills-tags">
+          <span class="skill-tag">Git</span>
+          <span class="skill-tag">GitHub Actions</span>
+          <span class="skill-tag">MkDocs</span>
+          <span class="skill-tag">LaTeX</span>
+          <span class="skill-tag">Docker</span>
+          <span class="skill-tag">io-uring</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- Projects -->
+  <section class="animate-on-scroll">
+    <h2 data-i18n="cv_projects">Projects</h2>
+
+    <div class="project-card">
+      <h3>UCEF — Universal Context Extension Framework</h3>
+      <p data-i18n="cv_ucef_detail">Model-agnostic framework enabling any LLM to process documents far exceeding its context window via hyperbolic retrieval, quantum-inspired selection, adaptive compression, and quality feedback. Achieved +10.3% (GLM-4) and +19.3% (DeepSeek-v3) over baseline RAG on LongBench.</p>
+      <p class="paper-meta">Stack: Python, NumPy, SciPy, Zhipu API, DeepSeek API</p>
+      <p class="paper-links"><a href="https://github.com/ViewWay/UCEF">GitHub</a> · <a href="https://viewway.github.io/UCEF/">Docs</a></p>
+    </div>
+
+    <div class="project-card">
+      <h3>Nexus — Production-Grade Rust Web Framework</h3>
+      <p data-i18n="cv_nexus_detail">High-availability web framework with custom io-uring async runtime. 58 crates covering HTTP server, data layer (ORM, connection pool), observability (tracing, metrics), i18n, and Web3. 220K+ lines of Rust.</p>
+      <p class="paper-meta">Stack: Rust, io-uring, epoll, kqueue</p>
+      <p class="paper-links"><a href="https://github.com/ViewWay/nexus">GitHub</a> · <a href="/Nexus/">Docs</a></p>
+    </div>
+
+    <div class="project-card">
+      <h3>ZPython — Python 3.15 Interpreter in Zig</h3>
+      <p data-i18n="cv_zpython_detail">Complete Python interpreter implemented from scratch in Zig. Features PEG parser, bytecode compiler, custom garbage collector (reference counting + mark-sweep + generational), and full bytecode VM. 42K+ lines targeting CPython 3.15 spec.</p>
+      <p class="paper-meta">Stack: Zig, CPython 3.15 spec</p>
+      <p class="paper-links"><a href="https://github.com/ViewWay/ZPython">GitHub</a> · <a href="/ZPython/">Docs</a></p>
+    </div>
+
+    <div class="project-card">
+      <h3>FeMeter — Three-Phase Smart Energy Meter Firmware</h3>
+      <p data-i18n="cv_femeter_detail">Rust firmware for FM33A0xx (Cortex-M0+) smart electricity meters. 6×UART + 2×LPUART, FreeRTOS 11.x integration, DL/T645 protocol support. ~10,400 lines of embedded Rust.</p>
+      <p class="paper-meta">Stack: Rust, FreeRTOS, thumbv6m-none-eabi</p>
+      <p class="paper-links"><a href="https://github.com/ViewWay/femeter">GitHub</a></p>
+    </div>
+
+    <div class="project-card">
+      <h3>DLMS/COSEM Protocol Stack (Multi-Language)</h3>
+      <p data-i18n="cv_dlms_detail">Protocol stack implementations for smart meter communication in 4 languages: Rust (no_std compatible), Go, C99 (zero malloc), and C++17. Covers DLMS/COSEM application layer with HDLC/TCP transport.</p>
+      <p class="paper-meta">Stack: Rust, Go, C99, C++17</p>
+      <p class="paper-links"><a href="https://github.com/ViewWay/dlms-cosem-rust">Rust</a> · <a href="https://github.com/ViewWay/dlms-cosem-go">Go</a> · <a href="https://github.com/ViewWay/dlms-cosem-c">C</a> · <a href="https://github.com/ViewWay/dlms-cosem-cpp">C++</a></p>
+    </div>
+
+    <div class="project-card">
+      <h3>MiniHES — Cloud Smart Meter Reading System</h3>
+      <p data-i18n="cv_minihes_detail">Cloud-based intelligent meter reading system with DLMS/COSEM protocol stack integration and multi-communication adapter support. Full-stack application for energy data management.</p>
+      <p class="paper-meta">Stack: Vue, Python, DLMS/COSEM</p>
+      <p class="paper-links"><a href="https://github.com/ViewWay/MiniHES">GitHub</a></p>
+    </div>
+
+    <div class="project-card">
+      <h3>DevPilot — Desktop AI Development Assistant</h3>
+      <p data-i18n="cv_devpilot_detail">Tauri 2 desktop application for AI-powered development workflow management. 15 crates, full-stack Rust backend + React frontend with LLM integration.</p>
+      <p class="paper-meta">Stack: Rust, Tauri 2, React, TypeScript, Zustand</p>
+      <p class="paper-links"><a href="https://github.com/ViewWay/devpilot">GitHub</a></p>
+    </div>
+
+    <div class="project-card">
+      <h3>HBE — Multi-Platform AI Coding Enhancement Suite</h3>
+      <p data-i18n="cv_hbe_detail">Production-grade coding enhancement system with 10 specialized agents, 13 skills, and Ralph autonomous loop. Supports 10 languages and 4 AI platforms with closed-loop learning.</p>
+      <p class="paper-meta">Stack: Shell, TypeScript, Python</p>
+      <p class="paper-links"><a href="https://github.com/ViewWay/hermes-by-everythings">GitHub</a> · <a href="/HBE/">Docs</a></p>
+    </div>
+
+    <div class="project-card">
+      <h3>yimi-rutool — AI-Powered Java Tool Library in Rust</h3>
+      <p data-i18n="cv_rutool_detail">Using AI to replicate Java's Hutool utility library in Rust. Demonstrates AI-assisted cross-language porting with automated test generation.</p>
+      <p class="paper-meta">Stack: Rust</p>
+      <p class="paper-links"><a href="https://github.com/ViewWay/yimi-rutool">GitHub</a></p>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- Publications -->
+  <section class="animate-on-scroll">
+    <h2 data-i18n="cv_pubs">Publications</h2>
+    <div class="paper-card">
+      <h3>UCEF: Universal Context Extension Framework — Breaking the Context Barrier with Hyperbolic Geometry and Quantum-Inspired Selection</h3>
+      <p class="paper-meta">HongLin He · <em>arXiv preprint</em>, 2026</p>
+      <p class="paper-links"><a href="https://github.com/ViewWay/UCEF">GitHub</a> · <a href="https://viewway.github.io/UCEF/">Documentation</a></p>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- GitHub Stats -->
+  <section class="animate-on-scroll">
+    <h2 data-i18n="cv_github">Open Source Activity</h2>
+    <div class="stats-bar">
+      <div class="stat-item">
+        <div class="stat-number">30+</div>
+        <div class="stat-label" data-i18n="cv_os_repos">Original Repos</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">300K+</div>
+        <div class="stat-label" data-i18n="cv_os_loc">Lines of Code</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">10+</div>
+        <div class="stat-label" data-i18n="cv_os_langs">Languages Used</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">6+</div>
+        <div class="stat-label" data-i18n="cv_os_doc">Documented Projects</div>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer class="site-footer">
   <p>&copy; 2026 HongLin He</p>
 </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.animate-on-scroll').forEach(el => {
+    observer.observe(el);
+  });
+});
+</script>
 </body>
 </html>

@@ -556,6 +556,146 @@ const translations = {
   },
 
   // ── CV Page ─────────────────────────────────────────
+  "cv_tagline": {
+    "en": "Independent researcher · Full-stack engineer · Open source contributor",
+    "zh-CN": "独立研究者 · 全栈工程师 · 开源贡献者",
+    "zh-TW": "獨立研究者 · 全棧工程師 · 開源貢獻者",
+    "ja": "独立研究者 · フルスタックエンジニア · オープンソース貢献者",
+    "ko": "독립 연구자 · 풀스택 엔지니어 · 오픈소스 기여자",
+    "fr": "Chercheur indépendant · Ingénieur full-stack · Contributeur open source",
+    "de": "Unabhängiger Forscher · Full-Stack-Ingenieur · Open-Source-Beitragender",
+    "es": "Investigador independiente · Ingeniero full-stack · Contribuidor open source"
+  },
+  "cv_sk_lang": {
+    "en": "Programming Languages", "zh-CN": "编程语言", "zh-TW": "程式語言", "ja": "プログラミング言語",
+    "ko": "프로그래밍 언어", "fr": "Langages de programmation", "de": "Programmiersprachen", "es": "Lenguajes de programación"
+  },
+  "cv_sk_ai": {
+    "en": "AI / Machine Learning", "zh-CN": "AI / 机器学习", "zh-TW": "AI / 機器學習", "ja": "AI / 機械学習",
+    "ko": "AI / 머신러닝", "fr": "IA / Apprentissage automatique", "de": "KI / Maschinelles Lernen", "es": "IA / Aprendizaje automático"
+  },
+  "cv_sk_embedded": {
+    "en": "Embedded & IoT", "zh-CN": "嵌入式 & IoT", "zh-TW": "嵌入式 & IoT", "ja": "組み込み & IoT",
+    "ko": "임베디드 & IoT", "fr": "Embarqué & IoT", "de": "Embedded & IoT", "es": "Embebido & IoT"
+  },
+  "cv_sk_web": {
+    "en": "Web & Desktop", "zh-CN": "Web & 桌面", "zh-TW": "Web & 桌面", "ja": "Web & デスクトップ",
+    "ko": "Web & 데스크톱", "fr": "Web & Bureau", "de": "Web & Desktop", "es": "Web y Escritorio"
+  },
+  "cv_sk_tools": {
+    "en": "Tools & DevOps", "zh-CN": "工具 & DevOps", "zh-TW": "工具 & DevOps", "ja": "ツール & DevOps",
+    "ko": "도구 & DevOps", "fr": "Outils & DevOps", "de": "Tools & DevOps", "es": "Herramientas y DevOps"
+  },
+  "cv_ucef_detail": {
+    "en": "Model-agnostic framework enabling any LLM to process documents far exceeding its context window via hyperbolic retrieval, quantum-inspired selection, adaptive compression, and quality feedback. Achieved +10.3% (GLM-4) and +19.3% (DeepSeek-v3) over baseline RAG on LongBench.",
+    "zh-CN": "模型无关框架，通过双曲检索、量子启发选择、自适应压缩和质量反馈，使任何LLM能处理远超其上下文窗口的文档。在LongBench上相对基线RAG提升+10.3%（GLM-4）和+19.3%（DeepSeek-v3）。",
+    "zh-TW": "模型無關框架，通過雙曲檢索、量子啟發選擇、自適應壓縮和質量反饋，使任何LLM能處理遠超其上下文視窗的文件。在LongBench上相對基線RAG提升+10.3%（GLM-4）和+19.3%（DeepSeek-v3）。",
+    "ja": "双曲検索、量子インスパイアード選択、適応圧縮、品質フィードバックにより、あらゆるLLMがコンテキストウィンドウを大幅に超える文書を処理できるモデル非依存フレームワーク。LongBenchでベースラインRAGに対し+10.3%（GLM-4）、+19.3%（DeepSeek-v3）の改善を達成。",
+    "ko": "쌍곡 검색, 양자 영감 선택, 적응형 압축 및 품질 피드백을 통해 모든 LLM이 컨텍스트 창을 훨씬 초과하는 문서를 처리할 수 있는 모델 독립적 프레임워크. LongBench에서 베이스라인 RAG 대비 +10.3%(GLM-4), +19.3%(DeepSeek-v3) 향상 달성.",
+    "fr": "Framework agnostique permettant à tout LLM de traiter des documents dépassant sa fenêtre de contexte via récupération hyperbolique, sélection quantique, compression adaptative et retour qualité. Amélioration de +10,3% (GLM-4) et +19,3% (DeepSeek-v3) sur LongBench.",
+    "de": "Modellunabhängiges Framework, das jedem LLM ermöglicht, Dokumente weit über sein Kontextfenster hinaus zu verarbeiten. +10,3% (GLM-4) und +19,3% (DeepSeek-v3) Verbesserung auf LongBench.",
+    "es": "Framework agnóstico que permite a cualquier LLM procesar documentos que exceden su ventana de contexto. Mejora de +10.3% (GLM-4) y +19.3% (DeepSeek-v3) sobre RAG base en LongBench."
+  },
+  "cv_nexus_detail": {
+    "en": "High-availability web framework with custom io-uring async runtime. 58 crates covering HTTP server, data layer (ORM, connection pool), observability (tracing, metrics), i18n, and Web3. 220K+ lines of Rust.",
+    "zh-CN": "高可用Web框架，自研io-uring异步运行时。58个crate覆盖HTTP服务器、数据层（ORM、连接池）、可观测性（追踪、指标）、国际化和Web3。220K+行Rust。",
+    "zh-TW": "高可用Web框架，自研io-uring異步運行時。58個crate覆蓋HTTP伺服器、資料層（ORM、連接池）、可觀測性（追蹤、指標）、國際化和Web3。220K+行Rust。",
+    "ja": "高可用性Webフレームワーク。カスタムio-uring非同期ランタイム搭載。HTTP、データ層（ORM、接続プール）、オブザーバビリティ、i18n、Web3をカバーする58クレート。220K+行のRust。",
+    "ko": "고가용성 웹 프레임워크. 커스텀 io-uring 비동기 런타임. HTTP, 데이터 레이어(ORM, 연결 풀), 관측 가능성, i18n, Web3를 포함하는 58개 크레이트. 220K+줄의 Rust.",
+    "fr": "Framework web haute disponibilité avec runtime async io-uring. 58 crates couvrant HTTP, ORM, observabilité, i18n et Web3. 220K+ lignes de Rust.",
+    "de": "Hochverfügbares Web-Framework mit benutzerdefiniertem io-uring Async-Runtime. 58 Crates für HTTP, ORM, Observability, i18n und Web3. 220K+ Zeilen Rust.",
+    "es": "Framework web de alta disponibilidad con runtime async io-uring. 58 crates cubriendo HTTP, ORM, observabilidad, i18n y Web3. 220K+ líneas de Rust."
+  },
+  "cv_zpython_detail": {
+    "en": "Complete Python interpreter implemented from scratch in Zig. Features PEG parser, bytecode compiler, custom garbage collector (RC + mark-sweep + generational), and full bytecode VM. 42K+ lines targeting CPython 3.15 spec.",
+    "zh-CN": "用Zig从零实现的完整Python解释器。含PEG解析器、字节码编译器、自定义垃圾回收器（引用计数+标记清除+分代）和完整字节码虚拟机。42K+行，对标CPython 3.15规范。",
+    "zh-TW": "用Zig從零實現的完整Python解釋器。含PEG解析器、字節碼編譯器、自定義垃圾回收器（引用計數+標記清除+分代）和完整字節碼虛擬機。42K+行，對標CPython 3.15規範。",
+    "ja": "Zigでゼロから実装した完全なPythonインタプリタ。PEGパーサー、バイトコードコンパイラ、カスタムGC（RC+マークスイープ+世代別）、完全なバイトコードVMを搭載。42K+行、CPython 3.15仕様準拠。",
+    "ko": "Zig로 처음부터 구현한 완전한 Python 인터프리터. PEG 파서, 바이트코드 컴파일러, 커스텀 GC(RC+마크 스윕+세대별), 완전한 바이트코드 VM 포함. 42K+줄, CPython 3.15 사양 대상.",
+    "fr": "Interpréteur Python complet implémenté de zéro en Zig. PEG parser, compilateur bytecode, GC personnalisé (RC + marquage + générationnel), VM bytecode complète. 42K+ lignes.",
+    "de": "Kompletter Python-Interpreter von Grund auf in Zig. PEG-Parser, Bytecode-Compiler, benutzerdefinierter GC (RC + Mark-Sweep + generational), Bytecode-VM. 42K+ Zeilen.",
+    "es": "Intérprete Python completo implementado desde cero en Zig. Parser PEG, compilador bytecode, GC personalizado (RC + marca-barrido + generacional), VM bytecode completa. 42K+ líneas."
+  },
+  "cv_femeter_detail": {
+    "en": "Rust firmware for FM33A0xx (Cortex-M0+) smart electricity meters. 6×UART + 2×LPUART, FreeRTOS 11.x integration, DL/T645 protocol support. ~10,400 lines of embedded Rust.",
+    "zh-CN": "FM33A0xx (Cortex-M0+) 智能电能表的Rust固件。6×UART + 2×LPUART，FreeRTOS 11.x集成，DL/T645协议支持。约10,400行嵌入式Rust。",
+    "zh-TW": "FM33A0xx (Cortex-M0+) 智慧電能表的Rust韌體。6×UART + 2×LPUART，FreeRTOS 11.x集成，DL/T645協議支持。約10,400行嵌入式Rust。",
+    "ja": "FM33A0xx (Cortex-M0+) スマート電力計測のRustファームウェア。6×UART + 2×LPUART、FreeRTOS 11.x統合、DL/T645プロトコル対応。約10,400行の組み込みRust。",
+    "ko": "FM33A0xx (Cortex-M0+) 스마트 전력 계량기용 Rust 펌웨어. 6×UART + 2×LPUART, FreeRTOS 11.x 통합, DL/T645 프로토콜 지원. 약 10,400줄의 임베디드 Rust.",
+    "fr": "Firmware Rust pour compteurs d'électricité intelligents FM33A0xx (Cortex-M0+). 6×UART + 2×LPUART, FreeRTOS 11.x, protocole DL/T645. ~10 400 lignes.",
+    "de": "Rust-Firmware für FM33A0xx (Cortex-M0+) Smart Meter. 6×UART + 2×LPUART, FreeRTOS 11.x, DL/T645-Protokoll. ~10.400 Zeilen Embedded Rust.",
+    "es": "Firmware Rust para medidores inteligentes FM33A0xx (Cortex-M0+). 6×UART + 2×LPUART, FreeRTOS 11.x, protocolo DL/T645. ~10.400 líneas."
+  },
+  "cv_dlms_detail": {
+    "en": "Protocol stack implementations for smart meter communication in 4 languages: Rust (no_std compatible), Go, C99 (zero malloc), and C++17. Covers DLMS/COSEM application layer with HDLC/TCP transport.",
+    "zh-CN": "智能电表通信协议栈的4语言实现：Rust（no_std兼容）、Go、C99（零malloc）和C++17。覆盖DLMS/COSEM应用层，支持HDLC/TCP传输。",
+    "zh-TW": "智慧電表通信協議棧的4語言實現：Rust（no_std相容）、Go、C99（零malloc）和C++17。覆蓋DLMS/COSEM應用層，支援HDLC/TCP傳輸。",
+    "ja": "スマートメーター通信プロトコルスタックの4言語実装：Rust（no_std対応）、Go、C99（ゼロmalloc）、C++17。DLMS/COSEMアプリケーション層+HDLC/TCPトランスポート対応。",
+    "ko": "스마트 미터 통신 프로토콜 스택의 4개 언어 구현: Rust(no_std 호환), Go, C99(제로 malloc), C++17. DLMS/COSEM 애플리케이션 레이어 + HDLC/TCP 전송 지원.",
+    "fr": "Implémentations de pile protocolaire pour compteurs intelligents en 4 langages : Rust (no_std), Go, C99 (zéro malloc), C++17. Couche DLMS/COSEM avec transport HDLC/TCP.",
+    "de": "Protokoll-Stack-Implementierungen für Smart Meter in 4 Sprachen: Rust (no_std), Go, C99 (zero malloc), C++17. DLMS/COSEM mit HDLC/TCP-Transport.",
+    "es": "Implementaciones de pila de protocolo para medidores inteligentes en 4 lenguajes: Rust (no_std), Go, C99 (zero malloc), C++17. Capa DLMS/COSEM con transporte HDLC/TCP."
+  },
+  "cv_minihes_detail": {
+    "en": "Cloud-based intelligent meter reading system with DLMS/COSEM protocol stack integration and multi-communication adapter support. Full-stack application for energy data management.",
+    "zh-CN": "云端智能电表抄表系统，集成DLMS/COSEM协议栈，支持多通信适配器。全栈能源数据管理应用。",
+    "zh-TW": "雲端智慧電表抄表系統，整合DLMS/COSEM協議棧，支援多通信適配器。全棧能源資料管理應用。",
+    "ja": "クラウドベースのスマートメーター検針システム。DLMS/COSEMプロトコルスタック統合、マルチ通信アダプタ対応。エネルギーデータ管理のフルスタックアプリケーション。",
+    "ko": "클라우드 기반 스마트 미터 검침 시스템. DLMS/COSEM 프로토콜 스택 통합, 다중 통신 어댑터 지원. 에너지 데이터 관리 풀스택 애플리케이션.",
+    "fr": "Système de relève intelligent cloud avec intégration DLMS/COSEM et support multi-communication. Application full-stack de gestion de données énergétiques.",
+    "de": "Cloud-basiertes intelligentes Zählerablesesystem mit DLMS/COSEM-Integration und Multi-Kommunikationsadapter. Full-Stack-Energiedatenmanagement.",
+    "es": "Sistema de lectura inteligente de medidores en la nube con integración DLMS/COSEM y soporte multi-comunicación. Aplicación full-stack de gestión de datos energéticos."
+  },
+  "cv_devpilot_detail": {
+    "en": "Tauri 2 desktop application for AI-powered development workflow management. 15 crates, full-stack Rust backend + React frontend with LLM integration.",
+    "zh-CN": "Tauri 2桌面应用，用于AI驱动的开发工作流管理。15个crate，全栈Rust后端+React前端，集成LLM。",
+    "zh-TW": "Tauri 2桌面應用，用於AI驅動的開發工作流管理。15個crate，全棧Rust後端+React前端，整合LLM。",
+    "ja": "AI駆動の開発ワークフロー管理用Tauri 2デスクトップアプリ。15クレート、フルスタックRustバックエンド+Reactフロントエンド、LLM統合。",
+    "ko": "AI 기반 개발 워크플로우 관리용 Tauri 2 데스크톱 앱. 15 크레이트, 풀스택 Rust 백엔드 + React 프론트엔드, LLM 통합.",
+    "fr": "Application Tauri 2 pour la gestion de workflows de développement IA. 15 crates, backend Rust + frontend React, intégration LLM.",
+    "de": "Tauri 2 Desktop-App für KI-gesteuerte Entwicklungs-Workflows. 15 Crates, Rust-Backend + React-Frontend, LLM-Integration.",
+    "es": "Aplicación Tauri 2 para gestión de workflows de desarrollo con IA. 15 crates, backend Rust + frontend React, integración LLM."
+  },
+  "cv_hbe_detail": {
+    "en": "Production-grade coding enhancement system with 10 specialized agents, 13 skills, and Ralph autonomous loop. Supports 10 languages and 4 AI platforms with closed-loop learning.",
+    "zh-CN": "生产级编码增强系统，10个专业代理、13个技能、Ralph自主循环。支持10种语言和4个AI平台，带闭环学习。",
+    "zh-TW": "生產級編碼增強系統，10個專業代理、13個技能、Ralph自主循環。支援10種語言和4個AI平台，帶閉環學習。",
+    "ja": "プロダクション級コーディング強化システム。10の専門エージェント、13のスキル、Ralph自律ループ。10言語・4AIプラットフォーム対応、クローズドループ学習付き。",
+    "ko": "프로덕션급 코딩 강화 시스템. 10개 전문 에이전트, 13개 스킬, Ralph 자율 루프. 10개 언어, 4개 AI 플랫폼 지원, 폐루프 학습.",
+    "fr": "Système d'amélioration du codage avec 10 agents spécialisés, 13 compétences et boucle autonome Ralph. 10 langues, 4 plateformes IA, apprentissage en boucle fermée.",
+    "de": "Produktionsreifes Coding-Enhancement-System mit 10 Agenten, 13 Skills und Ralph-Autonomie-Loop. 10 Sprachen, 4 KI-Plattformen, Closed-Loop-Learning.",
+    "es": "Sistema de mejora de codificación con 10 agentes, 13 habilidades y bucle autónomo Ralph. 10 lenguajes, 4 plataformas IA, aprendizaje en bucle cerrado."
+  },
+  "cv_rutool_detail": {
+    "en": "Using AI to replicate Java's Hutool utility library in Rust. Demonstrates AI-assisted cross-language porting with automated test generation.",
+    "zh-CN": "使用AI将Java的Hutool工具库移植为Rust实现。展示了AI辅助的跨语言移植与自动化测试生成。",
+    "zh-TW": "使用AI將Java的Hutool工具庫移植為Rust實現。展示了AI輔助的跨語言移植與自動化測試生成。",
+    "ja": "AIを使用してJavaのHutoolユーティリティライブラリをRustに移植。AI支援のクロス言語ポーティングと自動テスト生成を実証。",
+    "ko": "AI를 사용하여 Java의 Hutool 유틸리티 라이브러리를 Rust로 이식. AI 보조 크로스 언어 포팅과 자동 테스트 생성 시연.",
+    "fr": "Réplication de la bibliothèque Java Hutool en Rust avec l'IA. Démonstration de portage inter-langage assisté par IA avec génération automatique de tests.",
+    "de": "KI-gestützte Portierung von Javas Hutool-Bibliothek nach Rust. Demonstriert KI-gestütztes Cross-Language-Porting mit automatischer Testgenerierung.",
+    "es": "Replicación de la biblioteca Java Hutool en Rust usando IA. Demuestra portado inter-lenguaje asistido por IA con generación automática de pruebas."
+  },
+  "cv_github": {
+    "en": "Open Source Activity", "zh-CN": "开源活动", "zh-TW": "開源活動", "ja": "オープンソース活動",
+    "ko": "오픈소스 활동", "fr": "Activité Open Source", "de": "Open-Source-Aktivität", "es": "Actividad Open Source"
+  },
+  "cv_os_repos": {
+    "en": "Original Repos", "zh-CN": "原创仓库", "zh-TW": "原創倉庫", "ja": "オリジナルリポジトリ",
+    "ko": "오리지널 저장소", "fr": "Dépôts originaux", "de": "Eigene Repos", "es": "Repos originales"
+  },
+  "cv_os_loc": {
+    "en": "Lines of Code", "zh-CN": "代码行数", "zh-TW": "程式碼行數", "ja": "コード行数",
+    "ko": "코드 라인", "fr": "Lignes de code", "de": "Codezeilen", "es": "Líneas de código"
+  },
+  "cv_os_langs": {
+    "en": "Languages Used", "zh-CN": "使用语言", "zh-TW": "使用語言", "ja": "使用言語",
+    "ko": "사용 언어", "fr": "Langages utilisés", "de": "Verwendete Sprachen", "es": "Lenguajes utilizados"
+  },
+  "cv_os_doc": {
+    "en": "Documented Projects", "zh-CN": "文档化项目", "zh-TW": "文件化專案", "ja": "ドキュメント付きプロジェクト",
+    "ko": "문서화된 프로젝트", "fr": "Projets documentés", "de": "Dokumentierte Projekte", "es": "Proyectos documentados"
+  },
   "cv_title": {
     "en": "CV", "zh-CN": "简历", "zh-TW": "履歷", "ja": "履歴書",
     "ko": "이력서", "fr": "CV", "de": "Lebenslauf", "es": "CV"

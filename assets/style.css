@@ -880,6 +880,113 @@ p { margin: 0.6em 0; }
   .contact-list { flex-direction: column; align-items: center; gap: 8px; }
 }
 
+/* ── CV Profile Card ────────────────────────────────── */
+
+.cv-profile-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  margin: 0.5em 0;
+}
+
+.cv-profile-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 16px;
+}
+
+.cv-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  background-image: var(--gradient);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  flex-shrink: 0;
+}
+
+.cv-contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  font-size: 0.95em;
+  color: var(--text-secondary);
+}
+
+.cv-contact-row a {
+  color: var(--accent);
+}
+
+/* ── CV Timeline ────────────────────────────────────── */
+
+.cv-timeline {
+  position: relative;
+  padding-left: 24px;
+  margin: 0.5em 0;
+}
+
+.cv-timeline::before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: var(--gradient);
+  border-radius: 1px;
+}
+
+.cv-timeline-item {
+  position: relative;
+  padding-bottom: 24px;
+}
+
+.cv-timeline-item:last-child { padding-bottom: 0; }
+
+.cv-timeline-dot {
+  position: absolute;
+  left: -22px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg);
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+.cv-timeline-content h3 {
+  font-size: 1.05em;
+  color: var(--text);
+  border: none;
+  padding: 0;
+  margin: 0 0 4px 0;
+}
+
+.cv-timeline-date {
+  color: var(--accent);
+  font-weight: 500;
+  font-size: 0.9em;
+  margin: 0 0 4px 0;
+}
+
+.cv-timeline-content p {
+  color: var(--text-secondary);
+  font-size: 0.93em;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .cv-profile-header { flex-direction: column; text-align: center; }
+  .cv-profile-header > div { text-align: center; }
+  .cv-profile-header .tagline { margin: 0 auto; }
+  .cv-contact-row { justify-content: center; }
+}
+
 /* ── Sub-page headings (inherit new style) ─────────── */
 
 main h1 {
