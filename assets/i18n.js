@@ -429,6 +429,80 @@ const translations = {
     "es": "Asistente de desarrollo IA de escritorio"
   },
 
+  // ── Stats ────────────────────────────────────────────
+  "stats_title": {
+    "en": "By the Numbers", "zh-CN": "数据一览", "zh-TW": "數據一覽", "ja": "数字で見る",
+    "ko": "숫자로 보기", "fr": "En chiffres", "de": "In Zahlen", "es": "En cifras"
+  },
+  "stats_projects": {
+    "en": "Projects", "zh-CN": "项目", "zh-TW": "專案", "ja": "プロジェクト",
+    "ko": "프로젝트", "fr": "Projets", "de": "Projekte", "es": "Proyectos"
+  },
+  "stats_loc": {
+    "en": "Lines of Code", "zh-CN": "代码行数", "zh-TW": "程式碼行數", "ja": "コード行数",
+    "ko": "코드 라인", "fr": "Lignes de code", "de": "Codezeilen", "es": "Líneas de código"
+  },
+  "stats_languages": {
+    "en": "Languages", "zh-CN": "编程语言", "zh-TW": "程式語言", "ja": "プログラミング言語",
+    "ko": "프로그래밍 언어", "fr": "Langages", "de": "Sprachen", "es": "Lenguajes"
+  },
+  "stats_papers": {
+    "en": "Paper", "zh-CN": "论文", "zh-TW": "論文", "ja": "論文",
+    "ko": "논문", "fr": "Article", "de": "Publikation", "es": "Artículo"
+  },
+
+  // ── Skills ───────────────────────────────────────────
+  "skills_title": {
+    "en": "Tech Stack", "zh-CN": "技术栈", "zh-TW": "技術棧", "ja": "技術スタック",
+    "ko": "기술 스택", "fr": "Stack technique", "de": "Tech-Stack", "es": "Stack técnico"
+  },
+  "skills_languages": {
+    "en": "Languages", "zh-CN": "编程语言", "zh-TW": "程式語言", "ja": "プログラミング言語",
+    "ko": "프로그래밍 언어", "fr": "Langages", "de": "Sprachen", "es": "Lenguajes"
+  },
+  "skills_ml": {
+    "en": "ML / AI", "zh-CN": "机器学习 / AI", "zh-TW": "機器學習 / AI", "ja": "ML / AI",
+    "ko": "ML / AI", "fr": "ML / IA", "de": "ML / KI", "es": "ML / IA"
+  },
+  "skills_systems": {
+    "en": "Systems", "zh-CN": "系统", "zh-TW": "系統", "ja": "システム",
+    "ko": "시스템", "fr": "Systèmes", "de": "Systeme", "es": "Sistemas"
+  },
+  "skills_web": {
+    "en": "Web", "zh-CN": "Web", "zh-TW": "Web", "ja": "Web",
+    "ko": "Web", "fr": "Web", "de": "Web", "es": "Web"
+  },
+
+  // ── Featured Projects ────────────────────────────────
+  "section_projects": {
+    "en": "Featured Projects", "zh-CN": "精选项目", "zh-TW": "精選專案", "ja": "注目プロジェクト",
+    "ko": "주요 프로젝트", "fr": "Projets phares", "de": "Highlight-Projekte", "es": "Proyectos destacados"
+  },
+  "ucef_title": {
+    "en": "UCEF: Universal Context Extension Framework", "zh-CN": "UCEF：通用上下文扩展框架", "zh-TW": "UCEF：通用上下文擴展框架", "ja": "UCEF：汎用コンテキスト拡張フレームワーク",
+    "ko": "UCEF: 범용 컨텍스트 확장 프레임워크", "fr": "UCEF : Framework d'extension de contexte universel", "de": "UCEF: Universelles Kontexterweiterungs-Framework", "es": "UCEF: Framework de extensión de contexto universal"
+  },
+  "proj_nexus_short": {
+    "en": "Production-grade Rust web framework with custom io-uring async runtime, 58 crates, 220K+ lines.",
+    "zh-CN": "生产级Rust Web框架，自研io-uring异步运行时，58个crate，220K+行。",
+    "zh-TW": "生產級Rust Web框架，自研io-uring異步運行時，58個crate，220K+行。",
+    "ja": "プロダクション級Rust Webフレームワーク。カスタムio-uring非同期ランタイム、58クレート、220K+行。",
+    "ko": "프로덕션급 Rust 웹 프레임워크. 커스텀 io-uring 비동기 런타임, 58개 크레이트, 220K+줄.",
+    "fr": "Framework web Rust de production avec runtime async io-uring personnalisé, 58 crates, 220K+ lignes.",
+    "de": "Produktionsreifes Rust-Web-Framework mit benutzerdefiniertem io-uring Async-Runtime, 58 Crates, 220K+ Zeilen.",
+    "es": "Framework web Rust de producción con runtime async io-uring personalizado, 58 crates, 220K+ líneas."
+  },
+  "proj_zpython_short": {
+    "en": "Complete Python 3.15 interpreter in Zig with custom GC, PEG parser, and bytecode VM, 42K+ lines.",
+    "zh-CN": "用Zig实现的完整Python 3.15解释器，含自定义GC、PEG解析器和字节码VM，42K+行。",
+    "zh-TW": "用Zig實現的完整Python 3.15解釋器，含自定義GC、PEG解析器和字節碼VM，42K+行。",
+    "ja": "Zigで実装した完全なPython 3.15インタプリタ。カスタムGC、PEGパーサー、バイトコードVM、42K+行。",
+    "ko": "Zig로 구현한 완전한 Python 3.15 인터프리터. 커스텀 GC, PEG 파서, 바이트코드 VM, 42K+줄.",
+    "fr": "Interpréteur Python 3.15 complet en Zig avec GC personnalisé, parser PEG et VM bytecode, 42K+ lignes.",
+    "de": "Kompletter Python 3.15 Interpreter in Zig mit benutzerdefiniertem GC, PEG-Parser und Bytecode-VM, 42K+ Zeilen.",
+    "es": "Intérprete Python 3.15 completo en Zig con GC personalizado, parser PEG y VM de bytecode, 42K+ líneas."
+  },
+
   // ── Papers Page ─────────────────────────────────────
   "papers_title": {
     "en": "Papers", "zh-CN": "论文", "zh-TW": "論文", "ja": "論文",
